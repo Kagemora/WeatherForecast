@@ -47,9 +47,8 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.converter.gson)
     implementation(libs.retrofit)
-    implementation(libs.jakewharton.retrofit2.kotlin.coroutines.adapter)
-//    implementation(libs.okhttp3.okhttp)
-//    implementation (libs.okhttp3.logging.interceptor)
+    implementation(libs.okhttp3.okhttp)
+    implementation (libs.okhttp3.logging.interceptor)
 
     //Coroutines Flow
     implementation(libs.kotlinx.coroutines.reactive)
