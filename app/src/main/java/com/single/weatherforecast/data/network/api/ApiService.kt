@@ -28,9 +28,8 @@ interface ApiService {
     ):List<CityDto>
 
     companion object {
-        private const val KEY = "key=2acefc9d1e244226822111750242503"
-        private const val CURRENT_JSON = "current.json?key=2acefc9d1e244226822111750242503"
-        private const val FORECAST_JSON = "forecast.json?key=2acefc9d1e244226822111750242503"
-        private const val SEARCH_JSON = "search.json?key=2acefc9d1e244226822111750242503"
+        private const val CURRENT_JSON = "current.json"
+        private const val FORECAST_JSON = "forecast.json"
+        private const val SEARCH_JSON = "search.json"
     }
 }

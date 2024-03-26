@@ -9,14 +9,28 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ApiFactory {
 
     private const val BASE_URL = "https://api.weatherapi.com/v1/"
+    private const val KEY_NAME = "key"
+    private const val KEY_VALUE= "2acefc9d1e244226822111750242503"
 
     //Логирование на тестовой сборке, потом на NONE, чтоб фризов не было
     val logging = HttpLoggingInterceptor()
         .setLevel(HttpLoggingInterceptor.Level.BODY)
 
     //Перехват входящих вызовов
-    val client = OkHttpClient.Builder()
+    val clientOkHttpClient = OkHttpClient.Builder()
         .addInterceptor(logging)
+        .addInterceptor{ chain ->
+            val originalRequest = chain.request()
+            val newUrl = originalRequest
+                .url
+                .newBuilder()
+                .addQueryParameter(KEY_NAME, KEY_VALUE)
+                .build()
+            val newRequest = originalRequest.newBuilder()
+                .url(newUrl)
+                .build()
+            chain.proceed(newRequest)
+        }
         .build()
 
     //Конвертируем json в нестрогом формате
@@ -26,6 +40,7 @@ object ApiFactory {
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create(gson))
+        .client(clientOkHttpClient)
         .build()
 
     val apiService = retrofit.create(ApiService::class.java)
