@@ -25,7 +25,7 @@ object ApiFactory {
     //Добавляем HTTP клиент , для чтения и отправки API
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create())
+        .addConverterFactory(GsonConverterFactory.create(gson))
         .build()
 
     val apiService = retrofit.create(ApiService::class.java)
