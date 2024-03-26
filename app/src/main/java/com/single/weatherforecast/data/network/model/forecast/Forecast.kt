@@ -5,5 +5,5 @@ import com.single.weatherforecast.data.network.model.forecast.forecastday.Foreca
 
 data class Forecast(
     @SerializedName("forecastday")
-    val forecastday : List<ForecastDay>? = null
+    val forecastday: List<ForecastDay>
 )

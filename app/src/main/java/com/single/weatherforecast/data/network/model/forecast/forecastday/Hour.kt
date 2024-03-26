@@ -5,9 +5,9 @@ import com.single.weatherforecast.data.network.model.current.Condition
 
 data class Hour(
     @SerializedName("time")
-    val time: String? = null,
+    val time: String,
     @SerializedName("temp_c")
-    val tempC: Double? = null,
+    val tempC: Double,
     @SerializedName("condition")
-    val condition: Condition? = null
+    val condition: Condition
 )

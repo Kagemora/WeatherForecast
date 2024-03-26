@@ -5,9 +5,9 @@ import com.google.gson.annotations.SerializedName
 data class ForecastDay(
 
     @SerializedName("date")
-    val date: String? = null,
+    val date: String,
     @SerializedName("day")
-    val day: Day? = null,
+    val day: Day,
     @SerializedName("hour")
-    val hour: List<Hour>? = null
+    val hour: List<Hour>
 )

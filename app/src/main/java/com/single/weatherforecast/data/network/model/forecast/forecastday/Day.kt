@@ -5,13 +5,13 @@ import com.single.weatherforecast.data.network.model.current.Condition
 
 data class Day(
     @SerializedName("maxtemp_c")
-    val maxtempC: Double? = null,
+    val maxtempC: Double,
     @SerializedName("mintemp_c")
-    val mintempC: Double? = null,
+    val mintempC: Double,
     @SerializedName("avgtemp_c")
-    val avgtempC: Double? = null,
+    val avgtempC: Double,
     @SerializedName("totalprecip_mm")
-    val totalprecipMm: Double? = null,
+    val totalprecipMm: Double,
     @SerializedName("condition")
-    val condition: Condition? = null
+    val condition: Condition
 )

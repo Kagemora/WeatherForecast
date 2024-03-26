@@ -5,11 +5,11 @@ import com.single.weatherforecast.data.network.model.current.Current
 import com.single.weatherforecast.data.network.model.forecast.Forecast
 import com.single.weatherforecast.data.network.model.location.Location
 
-data class Weather (
+data class Weather(
     @SerializedName("location")
-    val location : Location? = null,
+    val location: Location,
     @SerializedName("current")
-    val current  : Current?  = null,
+    val current: Current,
     @SerializedName("forecast")
-    val forecast : Forecast? = null
+    val forecast: Forecast
 )
