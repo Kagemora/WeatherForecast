@@ -2,7 +2,7 @@ package com.single.weatherforecast.data.network.model.location
 
 import com.google.gson.annotations.SerializedName
 
-data class Location(
+data class CountryDto(
     @SerializedName("name")
     val name: String,
     @SerializedName("country")

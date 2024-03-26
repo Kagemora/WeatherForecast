@@ -1,11 +1,12 @@
 package com.single.weatherforecast.domain.entities
 
-import com.single.weatherforecast.data.network.model.current.Current
-import com.single.weatherforecast.data.network.model.forecast.Forecast
-import com.single.weatherforecast.data.network.model.location.Location
+import java.util.Calendar
+import java.util.Date
+import java.util.concurrent.locks.Condition
 
-data class Weather (
-    val location : Location?,
-    val current  : Current?,
-    val forecast : Forecast?
+data class Weather(
+    val tempC: Double,
+    val condition: String,
+    val conditionUrl: String,
+    val date: Calendar
 )

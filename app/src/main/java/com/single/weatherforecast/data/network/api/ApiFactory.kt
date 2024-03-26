@@ -8,7 +8,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiFactory {
 
-    private const val BASE_URL = "https://api.weatherapi.com/v1"
+    private const val BASE_URL = "https://api.weatherapi.com/v1/"
 
     //Логирование на тестовой сборке, потом на NONE, чтоб фризов не было
     val logging = HttpLoggingInterceptor()
@@ -25,7 +25,7 @@ object ApiFactory {
     //Добавляем HTTP клиент , для чтения и отправки API
     private val retrofit = Retrofit.Builder()
         .baseUrl(BASE_URL)
-        .addConverterFactory(GsonConverterFactory.create(gson))
+        .addConverterFactory(GsonConverterFactory.create())
         .build()
 
     val apiService = retrofit.create(ApiService::class.java)
