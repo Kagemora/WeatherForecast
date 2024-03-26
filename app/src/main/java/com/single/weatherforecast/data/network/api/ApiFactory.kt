@@ -32,7 +32,7 @@ object ApiFactory {
             chain.proceed(newRequest)
         }
         .build()
-
+//
     //Конвертируем json в нестрогом формате
     private val gson = GsonBuilder().setLenient().create()
 
