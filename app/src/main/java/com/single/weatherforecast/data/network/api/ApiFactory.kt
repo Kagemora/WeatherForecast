@@ -7,6 +7,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiFactory {
+    //
 
     private const val BASE_URL = "https://api.weatherapi.com/v1/"
     private const val KEY_NAME = "key"
