@@ -1,5 +1,7 @@
 package com.single.weatherforecast.domain.repository
 
-interface SearchRepository {
 
+//Поиск городов
+interface SearchRepository {
+    suspend fun search(query: String): List<String>
 }
