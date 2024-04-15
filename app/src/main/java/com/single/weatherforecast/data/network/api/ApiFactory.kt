@@ -7,11 +7,6 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiFactory {
-
-    private const val BASE_URL = "https://api.weatherapi.com/v1/"
-    private const val KEY_NAME = "key"
-    private const val KEY_VALUE= "2acefc9d1e244226822111750242503"
-
     //Логирование на тестовой сборке, потом на NONE, чтоб фризов не было
     val logging = HttpLoggingInterceptor()
         .setLevel(HttpLoggingInterceptor.Level.BODY)
@@ -45,3 +40,7 @@ object ApiFactory {
 
     val apiService = retrofit.create(ApiService::class.java)
 }
+
+private const val BASE_URL = "https://api.weatherapi.com/v1/"
+private const val KEY_NAME = "key"
+private const val KEY_VALUE= "2acefc9d1e244226822111750242503"

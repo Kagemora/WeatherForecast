@@ -27,9 +27,8 @@ interface ApiService {
         @Query("q") query: String
     ):List<CityDto>
 
-    companion object {
-        private const val CURRENT_JSON = "current.json"
-        private const val FORECAST_JSON = "forecast.json"
-        private const val SEARCH_JSON = "search.json"
-    }
 }
+
+private const val CURRENT_JSON = "current.json"
+private const val FORECAST_JSON = "forecast.json"
+private const val SEARCH_JSON = "search.json"

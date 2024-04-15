@@ -28,11 +28,11 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = "17"
     }
     buildFeatures {
         viewBinding = true
@@ -48,7 +48,7 @@ dependencies {
     implementation(libs.converter.gson)
     implementation(libs.retrofit)
     implementation(libs.okhttp3.okhttp)
-    implementation (libs.okhttp3.logging.interceptor)
+    implementation(libs.okhttp3.logging.interceptor)
 
     //Coroutines Flow
     implementation(libs.kotlinx.coroutines.reactive)
@@ -58,7 +58,8 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.kotlinx.coroutines.core)
     implementation(libs.androidx.lifecycle.viewmodel.ktx)
-    implementation (libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.runtime.ktx)
 
     //Room cache
     implementation(libs.androidx.room.runtime)
@@ -84,10 +85,10 @@ dependencies {
     kapt(libs.compiler)
 
     //Dagger2
-    implementation (libs.dagger.android)
-    implementation (libs.dagger.android.support)
-    kapt (libs.google.dagger.android.processor)
-    kapt (libs.google.dagger.compiler)
+    implementation(libs.dagger.android)
+    implementation(libs.dagger.android.support)
+    kapt(libs.google.dagger.android.processor)
+    kapt(libs.google.dagger.compiler)
 
     //Test
     testImplementation(libs.junit)

@@ -6,5 +6,5 @@ import javax.inject.Inject
 class GetHourlyForecastUseCase @Inject constructor(
     private val repository: WeatherRepository
 ) {
-    operator fun invoke(cityId:Int) = repository.getHourlyForecast(cityId)
+    suspend operator fun invoke(cityId:Int) = repository.getHourlyForecast(cityId)
 }
