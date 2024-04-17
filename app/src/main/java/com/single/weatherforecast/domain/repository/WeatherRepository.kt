@@ -1,6 +1,5 @@
 package com.single.weatherforecast.domain.repository
 
-import androidx.lifecycle.LiveData
 import com.single.weatherforecast.domain.entities.DailyForecast
 import com.single.weatherforecast.domain.entities.Forecast
 import com.single.weatherforecast.domain.entities.HourlyForecast

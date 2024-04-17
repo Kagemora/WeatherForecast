@@ -5,8 +5,11 @@ import com.single.weatherforecast.domain.entities.Forecast
 import com.single.weatherforecast.domain.entities.HourlyForecast
 import com.single.weatherforecast.domain.entities.Weather
 import com.single.weatherforecast.domain.repository.WeatherRepository
+import javax.inject.Inject
 
-class WeatherRepositoryImpl : WeatherRepository {
+class WeatherRepositoryImpl @Inject constructor(
+
+): WeatherRepository {
     override suspend fun getWeather(cityId: Int): Weather {
         TODO("Not yet implemented")
     }

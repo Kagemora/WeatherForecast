@@ -7,12 +7,12 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
 object ApiFactory {
-    //Логирование на тестовой сборке, потом на NONE, чтоб фризов не было
-    val logging = HttpLoggingInterceptor()
+
+    val logging = HttpLoggingInterceptor()                     //Логирование на тестовой сборке, потом на NONE, чтоб фризов не было
         .setLevel(HttpLoggingInterceptor.Level.BODY)
 
-    //Перехват входящих вызовов
-    val clientOkHttpClient = OkHttpClient.Builder()
+
+    val clientOkHttpClient = OkHttpClient.Builder()            //Перехват входящих вызовов
         .addInterceptor(logging)
         .addInterceptor{ chain ->
             val originalRequest = chain.request()
@@ -27,12 +27,12 @@ object ApiFactory {
             chain.proceed(newRequest)
         }
         .build()
-//
-    //Конвертируем json в нестрогом формате
-    private val gson = GsonBuilder().setLenient().create()
 
-    //Добавляем HTTP клиент , для чтения и отправки API
-    private val retrofit = Retrofit.Builder()
+
+    private val gson = GsonBuilder().setLenient().create()    //Конвертируем json в нестрогом формате
+
+
+    private val retrofit = Retrofit.Builder()                 //Добавляем HTTP клиент , для чтения и отправки API
         .baseUrl(BASE_URL)
         .addConverterFactory(GsonConverterFactory.create(gson))
         .client(clientOkHttpClient)

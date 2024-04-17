@@ -1,10 +1,14 @@
 package com.single.weatherforecast.data.repository
 
 import androidx.lifecycle.LiveData
+import com.single.weatherforecast.data.cache.FavouriteCityDao
 import com.single.weatherforecast.domain.entities.City
 import com.single.weatherforecast.domain.repository.FavouriteRepository
+import javax.inject.Inject
 
-class FavouriteRepositoryImpl : FavouriteRepository {
+class FavouriteRepositoryImpl @Inject constructor(
+    private val favouriteCityDao:FavouriteCityDao
+) : FavouriteRepository {
     override fun favouriteCities(): LiveData<List<City>> {
         TODO("Not yet implemented")
     }
