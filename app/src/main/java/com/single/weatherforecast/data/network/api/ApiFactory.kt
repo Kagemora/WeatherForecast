@@ -9,7 +9,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 object ApiFactory {
 
     val logging = HttpLoggingInterceptor()                     //Логирование на тестовой сборке, потом на NONE, чтоб фризов не было
-        .setLevel(HttpLoggingInterceptor.Level.BODY)
+        .setLevel(HttpLoggingInterceptor.Level.NONE)
 
 
     val clientOkHttpClient = OkHttpClient.Builder()            //Перехват входящих вызовов

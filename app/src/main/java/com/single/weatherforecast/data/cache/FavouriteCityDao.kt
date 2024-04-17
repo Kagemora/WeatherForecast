@@ -10,7 +10,7 @@ import androidx.room.Query
 interface FavouriteCityDao {
 
     @Query("SELECT * FROM favourite_city")
-    fun getFavouriteCity(): LiveData<CityDbModel>
+    fun getFavouriteCity(): LiveData<List<CityDbModel>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun addCity(cityDbModel: CityDbModel)
