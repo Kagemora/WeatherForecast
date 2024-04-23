@@ -1,7 +1,6 @@
 package com.single.weatherforecast.data.mapper
 
 import com.single.weatherforecast.data.cache.CityDbModel
-import com.single.weatherforecast.data.network.model.city_search.CityDto
 import com.single.weatherforecast.domain.entities.City
 
 fun City.toDbModel():CityDbModel = CityDbModel(id, name, country)
