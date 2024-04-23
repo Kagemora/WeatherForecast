@@ -9,7 +9,7 @@ import javax.inject.Provider
 import kotlin.reflect.KClass
 
 class WeatherWorkerFactory @Inject constructor(
-    private val workerProvides: Map<Class<out ListenableWorker>, Provider<ChildWorkerFactory>>
+    private val workerProvides: @JvmSuppressWildcards Map<Class<out ListenableWorker>, Provider<ChildWorkerFactory>>
 ):WorkerFactory() {
     override fun createWorker(
         appContext: Context,

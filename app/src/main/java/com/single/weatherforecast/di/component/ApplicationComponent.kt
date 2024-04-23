@@ -1,5 +1,6 @@
 package com.single.weatherforecast.di.component
 
+import android.app.Application
 import android.content.Context
 import com.single.weatherforecast.di.anotation.ApplicationScope
 import com.single.weatherforecast.di.module.DataModule
@@ -11,7 +12,7 @@ import dagger.BindsInstance
 import dagger.Component
 
 
-@[Component(
+@Component(
     modules = [
         DomainModule::class,
         DataModule::class,
@@ -19,7 +20,7 @@ import dagger.Component
         WorkerModule::class
     ]
 )
-ApplicationScope]
+@ApplicationScope
 interface ApplicationComponent {
     fun inject(weatherApp: WeatherApp)
 
