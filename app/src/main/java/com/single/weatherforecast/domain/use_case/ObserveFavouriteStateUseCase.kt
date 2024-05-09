@@ -2,7 +2,7 @@ package com.single.weatherforecast.domain.use_case
 
 import com.single.weatherforecast.domain.repository.FavouriteRepository
 import javax.inject.Inject
-
+//добавлен ли город в избранное
 class ObserveFavouriteStateUseCase @Inject constructor(
     private val repository: FavouriteRepository
 ) {

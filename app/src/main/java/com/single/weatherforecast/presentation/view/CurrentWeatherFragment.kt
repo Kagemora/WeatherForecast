@@ -5,9 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.FragmentActivity
 import com.single.weatherforecast.R
-
-
+import com.single.weatherforecast.presentation.adapters.VpAdapter
 
 
 class CurrentWeatherFragment : Fragment() {
@@ -22,8 +22,10 @@ class CurrentWeatherFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-
         return inflater.inflate(R.layout.fragment_current_weather, container, false)
+    }
+    private fun viewPager2(){
+//        val adapter = VpAdapter(activity as FragmentActivity)
     }
 
     companion object {

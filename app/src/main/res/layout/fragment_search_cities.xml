@@ -55,7 +55,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:listitem="@layout/list_city_search"
-        app:layout_constraintTop_toBottomOf="@id/searchLinearLayout">
+        app:layout_constraintTop_toBottomOf="@id/searchLinearLayout"/>
 
-    </androidx.recyclerview.widget.RecyclerView>
+    <ProgressBar
+        android:id="@+id/downloadListCityPB"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        tools:visibility="gone"
+        android:layout_centerInParent="true"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerViewLinear"
+        app:layout_constraintEnd_toEndOf="@+id/recyclerViewLinear"
+        app:layout_constraintStart_toStartOf="@+id/recyclerViewLinear"
+        app:layout_constraintTop_toTopOf="@+id/recyclerViewLinear" />
 </androidx.constraintlayout.widget.ConstraintLayout>

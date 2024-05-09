@@ -3,6 +3,7 @@ package com.single.weatherforecast.data.mapper
 
 import com.single.weatherforecast.data.network.model.current.WeatherCurrentDto
 import com.single.weatherforecast.data.network.model.current.WeatherDto
+import com.single.weatherforecast.data.network.model.forecast.Hour
 import com.single.weatherforecast.data.network.model.forecast.WeatherForecastDto
 import com.single.weatherforecast.domain.entities.DailyForecast
 import com.single.weatherforecast.domain.entities.Forecast
@@ -20,7 +21,6 @@ fun WeatherDto.toEntity(): Weather = Weather(
     conditionUrl = conditionDto.iconUrl.correctImageUrl(),
     time = lastUpdatedEpoch.toCalendar()
 )
-
 fun WeatherForecastDto.toEntityDailyForecast(): List<DailyForecast> =
     weatherForecastDayDto.forecastday.map {
         DailyForecast(
@@ -48,9 +48,17 @@ fun WeatherForecastDto.getHourlyForecastsForDate(selectedDate: Calendar): List<H
 
 fun WeatherForecastDto.toEntity(): Forecast = Forecast(
     currentWeather = current.toEntity(),
-    upcoming = weatherForecastDayDto.forecastday.drop(1).map {
+    upcomingHourly = weatherForecastDayDto.forecastday.first().hour.map { hourDto ->
+        HourlyForecast(
+            time = hourDto.time.toCalendar(),
+            tempC = hourDto.tempC,
+            condition = hourDto.conditionDto.text,
+            conditionUrl = hourDto.conditionDto.iconUrl.correctImageUrl()
+        )
+    },
+    upcomingDaily = weatherForecastDayDto.forecastday.drop(1).map {
         val dayWeatherDto = it.day
-        Weather(
+        DailyForecast(
             tempC = dayWeatherDto.avgtempC,
             condition = dayWeatherDto.conditionDto.text,
             conditionUrl = dayWeatherDto.conditionDto.iconUrl.correctImageUrl(),

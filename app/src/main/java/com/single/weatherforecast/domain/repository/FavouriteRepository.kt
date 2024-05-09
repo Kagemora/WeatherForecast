@@ -9,4 +9,5 @@ interface FavouriteRepository {
     fun observeIsFavourite(cityId: Int): LiveData<Boolean>
     suspend fun addToFavourite(city: City)
     suspend fun removeFromFavourite(city: Int)
+    fun loadData()
 }

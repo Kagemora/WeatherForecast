@@ -25,7 +25,7 @@
             android:paddingTop="30dp"
             android:paddingEnd="30dp"
             android:text="25C"
-            android:textSize="40dp"
+            android:textSize="40sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/conditionIV" />
 
@@ -36,7 +36,7 @@
             android:layout_marginBottom="20dp"
             android:fontFamily="@font/alata"
             android:text="Москва"
-            android:textSize="20dp"
+            android:textSize="20sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="@+id/temperatureTV"
             app:layout_constraintTop_toBottomOf="@+id/temperatureTV" />
@@ -63,6 +63,17 @@
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_launcher_foreground" />
 
+        <ProgressBar
+            android:id="@+id/downloadCityPB"
+            style="?android:attr/progressBarStyleLarge"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:visibility="gone" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>
